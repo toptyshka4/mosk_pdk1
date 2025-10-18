@@ -1,0 +1,13 @@
+{% extends 'pdk_system/base.html' %}
+{% block content %}
+<h2>Панель</h2>
+<div class="row">
+  <div class="col-md-4"><div class="card p-3">Всего замечаний: {{ total_remarks }}</div></div>
+  <div class="col-md-4"><div class="card p-3">Неустранённых: {{ open_remarks }}</div></div>
+</div>
+<hr>
+<h4>Депо</h4>
+<ul>
+  {% for d in depots %}<li>{{ d.name }}</li>{% endfor %}
+</ul>
+{% endblock %}

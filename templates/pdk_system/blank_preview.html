@@ -1,0 +1,13 @@
+{% extends 'pdk_system/base.html' %}
+{% block content %}
+<h3>Бланк замечаний для поезда {{ train.number }}</h3>
+<h5>Вагоны:</h5>
+<ul>{% for w in wagons %}<li>{{ w.number }}</li>{% endfor %}</ul>
+<hr>
+<h5>Ранее неустранённые замечания:</h5>
+{% if open_remarks %}
+  <ul>{% for r in open_remarks %}<li>{{ r.wagon }} — {{ r.description }} (с {{ r.date_found }})</li>{% endfor %}</ul>
+{% else %}<p>Отсутствуют.</p>{% endif %}
+<hr>
+<a class="btn btn-success" href="{% url 'fill_blank' train.id %}">Заполнить бланк</a>
+{% endblock %}

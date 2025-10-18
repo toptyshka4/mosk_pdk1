@@ -1,0 +1,8 @@
+[
+  {"model": "pdk_system.depo", "pk": 1, "fields": {"name": "1"}},
+  {"model": "pdk_system.depo", "pk": 2, "fields": {"name": "2"}},
+  {"model": "pdk_system.depo", "pk": 3, "fields": {"name": "3"}},
+  {"model": "pdk_system.depo", "pk": 4, "fields": {"name": "4"}},
+  {"model": "pdk_system.depo", "pk": 5, "fields": {"name": "5"}},
+  {"model": "pdk_system.depo", "pk": 6, "fields": {"name": "6"}}
+]

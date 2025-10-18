@@ -1,0 +1,18 @@
+{% extends 'pdk_system/base.html' %}
+{% block content %}
+<h3>Заполнить бланк: поезд {{ train.number }}</h3>
+<form method="post">{% csrf_token %}
+  <h5>Вагоны:</h5>
+  {% for w in wagons %}
+    <div class="border p-2 mb-2">
+      <strong>{{ w.number }}</strong>
+      <div>Старые замечания:</div>
+      <ul>
+        {% for r in open_remarks %}{% if r.wagon.id == w.id %}<li>{{ r.description }} — <label><input type="checkbox" name="fixed_{{ w.id }}"> устранено</label></li>{% endif %}{% endfor %}
+      </ul>
+      <div class="mb-2"><label>Новая замечание (если есть)</label><input class="form-control" name="new_remark_{{ w.id }}"></div>
+    </div>
+  {% endfor %}
+  <button class="btn btn-primary">Сохранить бланк</button>
+</form>
+{% endblock %}

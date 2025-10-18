@@ -1,0 +1,9 @@
+{% extends 'pdk_system/base.html' %}
+{% block content %}
+<h3>Сформировать бланк замечаний</h3>
+<form method="post">{% csrf_token %}
+  <div class="mb-3"><label>Номер поезда</label><input name="train_number" class="form-control"></div>
+  <div class="mb-3"><label>Номера вагонов (через запятую)</label><input name="wagons" class="form-control"></div>
+  <button class="btn btn-primary">Сформировать</button>
+</form>
+{% endblock %}
