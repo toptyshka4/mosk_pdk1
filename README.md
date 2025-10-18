@@ -20,6 +20,7 @@
 2. Примените миграции и создайте суперпользователя:
    ```bash
    python manage.py migrate
+   python manage.py loaddata initial_data.json
    python manage.py createsuperuser
    ```
 3. Запустите сервер:
